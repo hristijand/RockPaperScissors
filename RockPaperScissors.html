@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+<script>
+        function computerPlay() {
+            let computerArray = ["rock", "paper", "scissors"];
+            let randomNumber = Math.floor(Math.random() * 100 % 3);
+            return computerArray[randomNumber];
+        }
+        function game() {
+            let userScore = 0;
+            let computerScore = 0;
+            for (let i=0;i<5;i++)
+            {
+                let userInput = prompt("Rock, Paper or Scissors");
+                userInput = userInput.toLowerCase();
+                let computerSelection = computerPlay();
+                alert("You chose " + userInput + ", the computer chose " + computerSelection);
+                if (userInput == computerSelection)
+                {
+                    alert("It's a TIE, score is YOU: " + userScore + "COMPUTER: " + computerScore);
+                }
+                else if ((computerSelection == "rock" && userInput == "scissors") || (computerSelection == "paper" && userInput == "rock") || (computerSelection =="scissors" && userInput == "paper"))
+                {
+                    computerScore++;
+                    alert("You lose, score is YOU: " + userScore + "COMPUTER: " + computerScore);
+                }
+                else
+                {
+                    userScore++;
+                    alert("You lose, score is YOU: " + userScore + "COMPUTER: " + computerScore);
+                }
+
+            }
+            if (userScore > computerScore)
+            {
+                alert("The winner is YOU");
+            }
+            else
+            {
+                alert("The winner is the COMPUTER");
+            }
+
+
+        }
+        game();
+
+
+
+
+
+
+</script>
+</body>
+</html>
